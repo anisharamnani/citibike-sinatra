@@ -1,2 +1,13 @@
 <h1>THE DATA</h1>
-<%= @data.inspect %>
+
+<ul>
+	<% @data.each do |hash| %> 
+	<li>
+		Location: <%=hash["name"]%>
+		<ul>
+			<li> Latitude: <%=hash["lat"]%> </li>
+			<li> Longitude: <%=hash["lng"]%> </li>
+		</ul>
+	</li>
+	<% end %>
+</ul>

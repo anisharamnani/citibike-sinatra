@@ -9,6 +9,7 @@ Dir.glob('./lib/*.rb') do |model|
 end
 
 module Citibike
+
 	class App < Sinatra::Application
     configure :development do
       register Sinatra::Reloader
