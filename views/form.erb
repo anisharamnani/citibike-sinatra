@@ -1,0 +1,37 @@
+<h2> Map my route! </h2>
+
+<form action="/map" method="POST">
+
+	<h2> Start </h2>
+
+	<label for="start"> Start </label>
+	<select id= "start" name="start">
+		<% @data.each do |hash|%>
+			<option value="<%=[hash["lat"]/1000000.00, hash["lng"]/1000000.00]%>">
+				<%= hash["name"] %>
+			</option>
+		<% end %>
+	</select>
+
+	<br/>
+
+	<h2> End </h2>
+
+
+	<label for="end"> End </label>
+	<select id= "end" name="end">
+		<% @data.each do |hash|%>
+			<option value= "<%=[hash["lat"]/1000000.00, hash["lng"]/1000000.00]%>">
+				<%= hash["name"] %>
+			</option>
+		<% end %>
+	</select>
+
+	<br/>
+
+	<button type="submit" value="Submit">Submit</button>
+
+	<p> <%= params.inspect %></p>
+
+	
+</form>
